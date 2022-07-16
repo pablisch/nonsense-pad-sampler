@@ -6,12 +6,56 @@ panels.forEach(panel => {
   panel.addEventListener("mouseover", () => {
     removeActiveClasses();
     panel.classList.add("active");
+    // console.log("col: " + document.querySelector(".indicator").innerHTML);
   })
 })
 
 function removeActiveClasses() {
   panels.forEach(panel => {
     panel.classList.remove("active");
+  })
+}
+
+// Change soundPanel css according to mouse over event
+
+const soundPanels = document.querySelectorAll(".noisePanel");
+
+soundPanels.forEach(soundPanel => {
+  soundPanel.addEventListener("mouseover", () => {
+    console.log(soundPanel.innerHTML);
+    removeCurrentClasses();
+    
+    // document.querySelectorAll(".current").classList.remove("current");
+    var hoverOverkey = soundPanel.innerHTML;
+    if (hoverOverkey == "e" || hoverOverkey == "r" || hoverOverkey == "t" || hoverOverkey == "y" || hoverOverkey == "u") {
+      document.querySelector(".e").classList.add("current");
+      document.querySelector(".r").classList.add("current");
+      document.querySelector(".t").classList.add("current");
+      document.querySelector(".y").classList.add("current");
+      document.querySelector(".u").classList.add("current");
+    } else if (hoverOverkey == "d" || hoverOverkey == "f" || hoverOverkey == "g" || hoverOverkey == "h" || hoverOverkey == "j") {
+      document.querySelector(".d").classList.add("current");
+      document.querySelector(".f").classList.add("current");
+      document.querySelector(".g").classList.add("current");
+      document.querySelector(".h").classList.add("current");
+      document.querySelector(".j").classList.add("current");
+    }  else if (hoverOverkey == "x" || hoverOverkey == "c" || hoverOverkey == "v" || hoverOverkey == "b" || hoverOverkey == "n") {
+      document.querySelector(".x").classList.add("current");
+      document.querySelector(".c").classList.add("current");
+      document.querySelector(".v").classList.add("current");
+      document.querySelector(".b").classList.add("current");
+      document.querySelector(".n").classList.add("current");
+    } else {
+      var currentRow = "none";
+    }
+    soundPanel.classList.remove("indicator");
+
+  })
+})
+
+function removeCurrentClasses() {
+  soundPanels.forEach(soundPanel => {
+    soundPanel.classList.remove("current");
   })
 }
 
@@ -24,7 +68,7 @@ for (let i = 0; i < numberOfBeatPanels; i++) {
     var panelClicked = this.innerHTML;
     playSound(panelClicked);
     panelFlash(panelClicked);
-    console.log(panelClicked);
+    // console.log(panelClicked);
     // alert(panelClicked);
     
   })
