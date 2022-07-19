@@ -99,8 +99,8 @@ function playSound(inputSelector) {
     case "h": var soundSelected = "boop"; break;
     case "b": var soundSelected = "sciFiBeep"; break;
     case "u": var soundSelected = "boop"; break;
-    case "j": var soundSelected = "sciFiBeep"; break;
-    case "n": var soundSelected = "sciFiBeep"; break;
+    case "j": var soundSelected = "CartoonSpringBounce"; break;
+    case "n": var soundSelected = "CartoonSpringBounce"; break;
     default:
       break;
   }
