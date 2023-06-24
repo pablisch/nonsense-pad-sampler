@@ -14,4 +14,5 @@ Clone the repository and open index.html in your browser, `open index.html`.
 ## Usage
 
 Open and play.
+
 ![NonsensePad](images/nonsensePad.gif)
